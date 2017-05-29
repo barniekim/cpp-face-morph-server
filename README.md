@@ -1,30 +1,12 @@
-# FaceMorphing
-Face Morphing by Delaunay Triangulation using OpenCV and C++
+# Server-side Face Morphing Engine
 
+Server-side Face Morphing Engine Implementation by Delaunay Triangulation based in C++ with [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace), [OpenCV](https://github.com/opencv/opencv), and [BOOST](https://github.com/boostorg/).
 
-##Please visit [HERE](https://devendrapratapyadav.github.io/FaceMorphing) for detailed analysis of code and experiment results.
+This project has been started as a forked project from [HERE](https://github.com/DevendraPratapYadav/FaceMorphing).
 
+## DEPENDENCIES
 
-We manually mark sets of tie points for images, compute the Delaunay Triangulation for them, and morph the images using alpha blending.
+- OpenFace for Face Detection (FD) & Face Landmark Detection (FLD)
+- BOOST for TCP/IP communication w/ some utilities
+- OPENCV 3.1 for image processing
 
-Code is present in 'code' directory. FaceMorph.cpp implements the main program. Other files contain the images and predefined tie points.
-
-###HOW TO RUN : 
-NOTE: Cmake and GNU make are required for compilation along with OpenCV.
-
-1) Compile the program by entering the following command :
-```sh
-   cmake .
-   make
- ```
- 2) Run using:
- ```sh
-   ./lab4
- ```
- 
- The program provides three options via a menu:
-1. Mark points on images and find Delaunay Triangulation 
-2. Morph two images: '1.jpg' to '2.jpg'
-3. Morph three images: '1.jpg' to '2.jpg' to '3.jpg'
-
-Note: for now, the filenames are fixed. Code will be updated later to allow input for filenames.
