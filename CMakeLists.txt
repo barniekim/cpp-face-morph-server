@@ -139,11 +139,11 @@ include_directories(lib/3rdParty/json)
 add_subdirectory(lib/local/LandmarkDetector)
 
 # MORPHER library
-include_directories(lib/local/Morpher)
-add_subdirectory(lib/local/Morpher)
+include_directories(lib/local/morpher)
+add_subdirectory(lib/local/morpher)
 
-# FLDServer library
-add_subdirectory(lib/local/FLDServer)
+# fld-server library
+add_subdirectory(lib/local/fld-server)
 
 #### executables
-add_subdirectory(exe/FaceLandmarkServer)
+add_subdirectory(exe/face-morph-server)

@@ -8,10 +8,10 @@ add_library(base64 ../../3rdParty/base64/base64.cpp ../../3rdParty/base64/base64
 ## JSON
 include_directories(../../3rdParty/json)
 
-include_directories(./)
-add_library(Morpher morph.cpp)
+SET(SOURCE src/morph.cpp)
+SET(HEADERS include/morph.h)
 
-#target_link_libraries(Morpher ${OpenCV_LIBS})
-#target_link_libraries(Morpher base64)
+include_directories(${HEADERS})
+add_library(morpher ${SOURCE} ${HEADERS})
 
-install (TARGETS Morpher DESTINATION lib)
+install (TARGETS morpher DESTINATION lib)

@@ -5,10 +5,10 @@ include_directories(${TBB_ROOT_DIR}/include)
 include_directories(${BOOST_INCLUDE_DIR})
 
 include_directories(./include)
-include_directories(${FLDServer_SOURCE_DIR}/include)
+include_directories(${fld-server_SOURCE_DIR}/include)
 include_directories(${LandmarkDetector_SOURCE_DIR}/include)
 include_directories(../LandmarkDetector/include)
-include_directories(../Morpher)
+include_directories(../morpher/include)
 include_directories(../../3rdParty/base64)
 
 SET(SOURCE
@@ -20,9 +20,9 @@ SET(HEADERS
 	include/tcp_connection.h
 	include/tcp_server.h)
 
-add_library(FLDServer ${SOURCE} ${HEADERS})
-target_link_libraries(FLDServer base64)
-target_link_libraries(FLDServer Morpher)
+add_library(fld-server ${SOURCE} ${HEADERS})
+target_link_libraries(fld-server base64)
+target_link_libraries(fld-server morpher)
 
-install(TARGETS FLDServer DESTINATION lib)
+install(TARGETS fld-server DESTINATION lib)
 install(FILES ${HEADERS} DESTINATION include/OpenFace)
