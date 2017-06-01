@@ -142,7 +142,7 @@ void tcp_connection::write_result(std::string& result){
 }
 
 /**
- * tcp_connection::Process()
+ * tcp_connection::process_fldm()
  * 
  * @params
  * - 4 bytes; request_type (int); 0-COMPOSABLE, 1-PROGRESSIVE
@@ -152,7 +152,7 @@ void tcp_connection::write_result(std::string& result){
  * - total filesize; for file data
  *
  */
-void tcp_connection::Process(){
+void tcp_connection::process_fldm(){
 
 	int s_time = clock();
 	int e_time = s_time;
@@ -186,7 +186,7 @@ void tcp_connection::Process(){
 	char cr_tmp_prefix[18];
 	generate_random_prefix(cr_tmp_prefix, 15);
 	std::string tmp_prefix(cr_tmp_prefix);
-	const boost::filesystem::path path("/root/tmp/" + tmp_prefix);
+	const boost::filesystem::path path("./tmp/" + tmp_prefix);
 	boost::filesystem::create_directories(path);
 
 	for(int i=0; i<num_files; i++){
@@ -201,7 +201,7 @@ void tcp_connection::Process(){
 			memcpy(_file_data, data_ptr, _file_len);
 
 			ofstream _of_stream;
-			std::string _filename = "/root/tmp/"+tmp_prefix+"/_file"+std::to_string(i)+".jpg";
+			std::string _filename = "./tmp/"+tmp_prefix+"/_file"+std::to_string(i)+".jpg";
 			_of_stream.open(_filename, ios::binary|ios::out);
 			_of_stream.write((const char*) _file_data, _file_len);
 			_of_stream.close();
@@ -349,7 +349,7 @@ void tcp_connection::Process(){
 		boost::system::error_code ignored_ec;
 		socket_.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignored_ec);
 	}catch (std::exception& e){
-		std::cerr << "in tcp_connection::Process() " << e.what() << std::endl;
+		std::cerr << "in tcp_connection::process_fldm() " << e.what() << std::endl;
 
 		// print out the error message
 		json j_output;
@@ -363,12 +363,10 @@ void tcp_connection::Process(){
 void tcp_connection::handle_read(const boost::system::error_code& error, size_t bytes_transferred){
 	if(error){ return; }
 	data_offset_ += bytes_transferred;
-	//fprintf(stderr, "handle_read. data_offset: %d\n", data_offset_);
 	if (data_offset_ < data_len_) {
-		//fprintf(stderr, "not enough data passed in... start_read() again.\n");
 		start_read();
 	}else {
-		Process();
+		process_fldm();
 	}
 }
 

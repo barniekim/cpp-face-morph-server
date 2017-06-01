@@ -48,7 +48,7 @@ private:
 	
 	void sync_write(char* data_to_send, int len_to_send);
 	void write_result(std::string& xml);
-	void Process();
+	void process_fldm();
 	
 	void handle_read_datasize(const boost::system::error_code& error, size_t bytes_transferred);
 	void handle_read(const boost::system::error_code& error, size_t bytes_transferred);
