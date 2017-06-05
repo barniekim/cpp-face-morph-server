@@ -4,11 +4,11 @@ include_directories(${TBB_ROOT_DIR}/include)
 #BOOST library
 include_directories(${BOOST_INCLUDE_DIR})
 
-include_directories(./include)
-include_directories(${fld-server_SOURCE_DIR}/include)
-include_directories(${LandmarkDetector_SOURCE_DIR}/include)
 include_directories(../LandmarkDetector/include)
 include_directories(../morpher/include)
+include_directories(${fld-server_SOURCE_DIR}/include)
+include_directories(${LandmarkDetector_SOURCE_DIR}/include)
+include_directories(./include)
 include_directories(../../3rdParty/base64)
 
 SET(SOURCE

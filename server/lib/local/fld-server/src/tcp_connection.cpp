@@ -310,7 +310,7 @@ void tcp_connection::process_fldm(){
 
 	/** 3) Face Morphing */	
 	fprintf(stderr, "Face Morphing type: %d\n\n", request_type);
-	if(request_type == 0){
+	if(request_type == REQUEST_TYPE_COMPOSABLE){
 		
 		// COMPOSABLE
 		string encoded_src, encoded_dst, encoded_out;
@@ -321,7 +321,7 @@ void tcp_connection::process_fldm(){
 		j_output["encoded_dst"]		= encoded_dst;
 		j_output["encoded_out"]		= encoded_out;
 
-	}else if(request_type == 1){
+	}else if(request_type == REQUEST_TYPE_PROGRESSIVE){
 
 		// PROGRESSIVE
 		string encoded_src, encoded_dst, encoded_out1, encoded_out2;
@@ -353,8 +353,8 @@ void tcp_connection::process_fldm(){
 
 		// print out the error message
 		json j_output;
-		j_output["is_succeeded"]	= false;
-		j_output["error_msg"]			= "ERROR";
+		j_output["is_succeeded"]    = false;
+		j_output["error_msg"]       = "ERROR";
 		std::string result = j_output.dump();
 		write_result(result);
 	}

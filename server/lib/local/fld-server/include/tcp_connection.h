@@ -6,6 +6,7 @@
 #include <boost/asio.hpp>
 
 #include "LandmarkCoreIncludes.h"
+#include "morph.h"
 
 // OpenCV includes
 #include <opencv2/core/core.hpp>
