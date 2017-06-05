@@ -11,7 +11,7 @@ include_directories(../../3rdParty/json)
 SET(SOURCE src/morph.cpp)
 SET(HEADERS include/morph.h)
 
-include_directories(${HEADERS})
+include_directories(./include)
 add_library(morpher ${SOURCE} ${HEADERS})
 
 install (TARGETS morpher DESTINATION lib)
