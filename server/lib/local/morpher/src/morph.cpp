@@ -460,28 +460,12 @@ bool face_morph(cv::Mat &img_src, cv::Mat &img_dst, json &jsn_fld, int target_re
 	}catch (std::exception& e){
 		std::cerr << "in tcp_connection::face_morph() > tri_morphing " << e.what() << std::endl;
 	}
-
-	// set filename (e.g. 01.jpeg, 02.jpeg, ...) 
-	// & save the result to the image file
-	//crop_valid_area_from_image(img_out, pts_out, img_out);
-	//double _resize_ratio = 100.0d / (double)(img_out.cols);
-	//cv::resize(img_out, img_out, cv::Size(), _resize_ratio, _resize_ratio, INTER_LANCZOS4);
 	
-	img_out = img_out(_rect);
+    /** uncomment this if you want to get face-cropped image as a result */
+	//img_out = img_out(_rect);
 
 	// print base64-encoded strings as return value
 	encode_image_base64(img_out, encoded_out);
-
-	/* FOR DEBUGGING
-	// save results to file
-	cv::Mat img_src_copy = img_src.clone();
-	cv::Mat img_dst_copy = img_dst.clone();
-	string filename_debug_src = "./result/result0.jpeg";
-	write_delaunay(img_src_copy, sdv_src, COLOR_WHITE, filename_debug_src);
-	write_triangle_indices_to_file(sdv_src, pts_src);
-	string filename_debug_dst = "./result/result1.jpeg";
-	write_delaunay(img_dst_copy, sdv_dst, COLOR_WHITE, filename_debug_dst);
-	*/
 
 	return true;
 }
