@@ -6,7 +6,7 @@ include_directories(${LandmarkDetector_SOURCE_DIR}/include)
 include_directories(${fld-server_SOURCE_DIR}/include)
 include_directories(../../lib/local/LandmarkDetector/include)
 include_directories(../../lib/local/fld-server/include)
-include_directories(../../lib/local/morpher)
+include_directories(../../lib/local/morpher/include)
 
 add_executable(face-morph-server face-morph-server.cpp)
 

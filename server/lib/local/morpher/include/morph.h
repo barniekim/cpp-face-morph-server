@@ -16,6 +16,9 @@ using json = nlohmann::json;
 using namespace cv;
 using namespace std;
 
+#define REQUEST_TYPE_COMPOSABLE     0 
+#define REQUEST_TYPE_PROGRESSIVE    10 
+
 /** definitions */
 
 vector<cv::Point2f> get_points_from_file(string filename);
@@ -39,7 +42,10 @@ static void write_delaunay(Mat& img, Subdiv2D& subdiv, Scalar delaunay_color, st
 void generate_random_prefix(char *s, const int len);
 void add_8_more_points(cv::Mat &img, vector<cv::Point2f> &pts);
 
-/** main function of face morphing feature: morphing (composable) */
+/** 
+ * main function of face morphing feature: 
+ * morphing (composable) 
+ */
 bool face_morph(cv::Mat &img_src, cv::Mat &img_dst, json &jsn_fld, int target_result_idx, string &encoded_src, string &encoded_dst, string &encoded_out);
 
 /** morphing (progressive) */

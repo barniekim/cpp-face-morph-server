@@ -29,7 +29,7 @@ error_reporting(E_ALL);
 $FLDM_SERVER_PORT           = "9876";
 $FLDM_SERVER_IP             = "127.0.0.1";
 $REQUEST_TYPE_COMPOSABLE    = 0;
-$REQUEST_TYPE_PROGRESSIVE   = 1;
+$REQUEST_TYPE_PROGRESSIVE   = 10;
 
 if(sizeof($argv) < 5){
 	echo "Usage: /usr/bin/php fld-client.php [img1-source] [img2-target] [request-type] [target-result-idx]\n\n";
