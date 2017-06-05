@@ -132,7 +132,7 @@ $files = array(
     "out" => $jsn->{"encoded_out"}
 );
 foreach($files as $key=>$str_base64){
-    base64_to_jpeg($str_base64, $key.".jpeg");
+    base64_to_jpeg($str_base64, "out/".$key.".jpeg");
 }
 
 /** close the socket */
