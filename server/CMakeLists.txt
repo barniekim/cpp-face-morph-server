@@ -27,8 +27,8 @@ LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 
 find_package(TBB REQUIRED)
 
-# Move LandmarkDetector model
-file(GLOB files "lib/local/LandmarkDetector/model/*.txt")
+# Move fld-core model
+file(GLOB files "lib/local/fld-core/model/*.txt")
 foreach(file ${files})
 	if (MSVC)
 		file(COPY ${file} DESTINATION ${CMAKE_BINARY_DIR}/bin/Debug/model)
@@ -40,8 +40,8 @@ foreach(file ${files})
 	install(FILES ${file} DESTINATION ${CMAKE_CONFIG_DIR}/model)
 endforeach()
 
-# Move the hierarchical LandmarkDetector models
-file(GLOB files "lib/local/LandmarkDetector/model/model*")
+# Move the hierarchical fld-core models
+file(GLOB files "lib/local/fld-core/model/model*")
 foreach(file ${files})
 	if (MSVC)
 		file(COPY ${file} DESTINATION ${CMAKE_BINARY_DIR}/bin/Debug/model)
@@ -53,7 +53,7 @@ foreach(file ${files})
 	install(DIRECTORY ${file} DESTINATION ${CMAKE_CONFIG_DIR}/model)
 endforeach()
 
-file(GLOB files "lib/local/LandmarkDetector/model/detection_validation/*.txt")
+file(GLOB files "lib/local/fld-core/model/detection_validation/*.txt")
 foreach(file ${files})
 	if (MSVC)
 		file(COPY ${file} DESTINATION ${CMAKE_BINARY_DIR}/bin/Debug/model/detection_validation)
@@ -65,7 +65,7 @@ foreach(file ${files})
 	install(FILES ${file} DESTINATION ${CMAKE_CONFIG_DIR}/model/detection_validation)
 endforeach()
 
-file(GLOB files "lib/local/LandmarkDetector/model/patch_experts/*.txt")
+file(GLOB files "lib/local/fld-core/model/patch_experts/*.txt")
 foreach(file ${files})
 	if (MSVC)
 		file(COPY ${file} DESTINATION ${CMAKE_BINARY_DIR}/bin/Debug/model/patch_experts)
@@ -77,7 +77,7 @@ foreach(file ${files})
 	install(FILES ${file} DESTINATION ${CMAKE_CONFIG_DIR}/model/patch_experts)
 endforeach()
 
-file(GLOB files "lib/local/LandmarkDetector/model/pdms/*.txt")
+file(GLOB files "lib/local/fld-core/model/pdms/*.txt")
 foreach(file ${files})
 	if (MSVC)
 		file(COPY ${file} DESTINATION ${CMAKE_BINARY_DIR}/bin/Debug/model/pdms)
@@ -135,8 +135,8 @@ include_directories(lib/3rdParty/base64)
 # json
 include_directories(lib/3rdParty/json)
 
-# LandmarkDetector library
-add_subdirectory(lib/local/LandmarkDetector)
+# fld-core library
+add_subdirectory(lib/local/fld-core)
 
 # MORPHER library
 include_directories(lib/local/morpher)

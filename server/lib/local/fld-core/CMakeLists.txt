@@ -33,9 +33,9 @@ SET(HEADERS
 )
 
 include_directories(./include)
-include_directories(${LandmarkDetector_SOURCE_DIR}/include)
+include_directories(${fld-core_SOURCE_DIR}/include)
 
-add_library( LandmarkDetector ${SOURCE} ${HEADERS} )
+add_library(fld-core ${SOURCE} ${HEADERS} )
 
-install (TARGETS LandmarkDetector DESTINATION lib)
+install (TARGETS fld-core DESTINATION lib)
 install (FILES ${HEADERS} DESTINATION include/OpenFace)
