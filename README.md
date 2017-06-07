@@ -20,15 +20,16 @@ A server-side face morphing engine implementation by Delaunay Triangulation base
 
 ### Usage
 
+```
 $ ./face-morph-server 9876 .
-
+```
 
 ## CLIENT (PHP)
 
 A FLDM (Face Landmark Detection & Morphing) client script, which queries TCP-request to the FLDM server which performs the "face morphing" task to the given images (source and destination) in the command-line shell using PHP script.
 
 ### Usage
-
+```
 $ /usr/bin/php fldm-client.php ../../sample/1.jpg ../../sample/2.jpg composable 5
-
+```
 
