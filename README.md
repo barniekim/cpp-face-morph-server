@@ -39,3 +39,14 @@ A FLDM (Face Landmark Detection & Morphing) client script, which queries TCP-req
 $ /usr/bin/php fldm-client.php ../../sample/1.jpg ../../sample/2.jpg composable 5
 ```
 
+## Sample Result
+The sample images below has been derived from the forked project done by DevendraPratapYadav.
+
+### Source
+![Source](./sample/src.jpeg)
+
+### Destination
+![Destination](./sample/dst.jpeg)
+
+### Result
+![Result](./sample/out.jpeg)
