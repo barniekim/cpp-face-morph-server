@@ -6,7 +6,7 @@ A server-side face morphing engine implementation by Delaunay Triangulation base
 
 Any clients which can send a http-request (with two images basically) could receive the morphed face as a result.
 
-This project first started as a forked project from [HERE](https://github.com/DevendraPratapYadav/FaceMorphing), then manipluated to the server-based application (via TCP/IP socket communication) powered by Face Detection library included in OpenFace and image processing & computer vision libraries in OpenCV.
+This project first started as a forked project from [HERE](https://github.com/DevendraPratapYadav/FaceMorphing), then manipulated to the server-based application (via TCP/IP socket communication) powered by Face Detection library included in OpenFace and image processing & computer vision libraries in OpenCV.
 
 This has been adopted & being used to a face-morphing baed commercial quiz service, with reasonably fast speed and quality.
 
